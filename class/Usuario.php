@@ -53,6 +53,13 @@ class Usuario {
         }
     }
 
+    public function getList(){
+        $sql = new Sql();
+        return $sql->select("SELECT * FROM tb_usuarios ORDER BY deslogin");
+    }
+
+
+
     public function __toString(){
         $dtcadastro = $this->getDtcadastro();
         if ($dtcadastro !== null) {
